@@ -14,4 +14,4 @@ This file contains prototypes for many Windows API functions
 
 Function names prefixed with 'kcr_'
 
-## 
+*More to come later...*
