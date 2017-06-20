@@ -58,4 +58,4 @@ KCRCHAIN.TPL includes all of the following files.
     KCRQEIP.TPW - Queue Edit In Place
     KCR_ABBROWSE.TPW - Default Browse with Update and Select
  
-Please see the **[Common Template Documentation](http://devuna.github.io/CommonTemplate)** for a complete listing of the templates with brief descriptions
+Please see the **[Common Template Documentation](https://devuna.github.io/Devuna-Common/CommonTemplate)** for a complete listing of the templates with brief descriptions
