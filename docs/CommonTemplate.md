@@ -14,14 +14,14 @@ This file contains the \#CONTROL templates.
 
 >KCR_EntryField - Adds an ENTRY control with automatic lookup from a MANY:1 relationship. 
 
->KCR_CalendarButton - adds a BUTTON which will allow any field to be validated using a popup calendar.  Requires Calendar procedure from  CyberTools library.  See [DEVUNA-CYBERTOOLS](https://github.com/Devuna/Devuna-CyberTools) repository.
+>KCR_CalendarButton - adds a BUTTON which will allow any field to be validated using a popup calendar.  Requires Calendar procedure from  CyberTools library.  See [**Devuna-CyberTools**](https://github.com/Devuna/Devuna-CyberTools) repository.
 
 
->KCR_PrintScreenButton - adds a BUTTON which will allow the screen on which it is populated to be printed. Requires Calendar procedure from  CyberTools library.  See [DEVUNA-CYBERTOOLS](https://github.com/Devuna/Devuna-CyberTools) repository.
+>KCR_PrintScreenButton - adds a BUTTON which will allow the screen on which it is populated to be printed. Requires Calendar procedure from  CyberTools library.  See [**Devuna-CyberTools**](https://github.com/Devuna/Devuna-CyberTools) repository.
 
 >KCR_StateProvPicker - adds a DROPLIST which will allow the user to select a state or province.
 
->KCR_DateLookup - adds a BUTTON to allow the user to select a date.  Requires Calendar procedure from  CyberTools library.  See [DEVUNA-CYBERTOOLS](https://github.com/Devuna/Devuna-CyberTools) repository.
+>KCR_DateLookup - adds a BUTTON to allow the user to select a date.  Requires Calendar procedure from  CyberTools library.  See [**Devuna-CyberTools**](https://github.com/Devuna/Devuna-CyberTools) repository.
 
 ### KCRCODE.TPW ###
 
