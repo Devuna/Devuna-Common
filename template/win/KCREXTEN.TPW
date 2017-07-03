@@ -3282,7 +3282,6 @@ END
 #!
 #!------------------------------------------------------------
 #AT(%CustomModuleDeclarations)
-! %Procedure::WindowProc(UNSIGNED,UNSIGNED,UNSIGNED,LONG),LONG,PASCAL
   #ADD(%CustomModuleMapModule,'CURRENT MODULE')
   #IF(%SubClassOption = 'Control')
     #SET(%ValueConstruct,' ' & SUB(%SubClassControl,2,LEN(%SubClassControl)-1) & '::WndProc')
