@@ -3,22 +3,21 @@
 #! ================================================================================================
 #! Author:  Randy Rogers (KCR) <rrogers@devuna.com>
 #! Notice:  Copyright (C) 2017, Devuna
-#!          Distributed under LGPLv3 (http://www.gnu.org/licenses/lgpl.html) 
+#!          Distributed under the MIT License (https://opensource.org/licenses/MIT)
 #! ================================================================================================
-#!    This file is part of Devuna-Common (https://github.com/Devuna/Devuna-Common)         
-#! 
-#!    Devuna-Common is free software: you can redistribute it and/or modify 
-#!    it under the terms of the GNU General Public License as published by 
-#!    the Free Software Foundation, either version 3 of the License, or 
-#!    (at your option) any later version. 
-#! 
-#!    Devuna-Common is distributed in the hope that it will be useful, 
-#!    but WITHOUT ANY WARRANTY; without even the implied warranty of 
-#!    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the 
-#!    GNU General Public License for more details. 
-#! 
-#!    You should have received a copy of the GNU General Public License 
-#!    along with Devuna-Common.  If not, see <http://www.gnu.org/licenses/>. 
+#!    This file is part of Devuna-Common (https://github.com/Devuna/Devuna-Common)
+#!
+#!    Devuna-Common is free software: you can redistribute it and/or modify
+#!    it under the terms of the MIT License as published by
+#!    the Open Source Initiative.
+#!
+#!    Devuna-Common is distributed in the hope that it will be useful,
+#!    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#!    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#!    MIT License for more details.
+#!
+#!    You should have received a copy of the MIT License
+#!    along with Devuna-Common.  If not, see <https://opensource.org/licenses/MIT>.
 #! ================================================================================================
 #!
 #!-------------------------------------------------------------------------------------------------
@@ -43,13 +42,12 @@
     #DISPLAY ('This template 1s free software:                                       '),AT(15)
     #DISPLAY ('You can redistribute it and/or modify it under the terms of the GNU   '),AT(15)
     #DISPLAY ('General Public License as published by the Free Software Foundation,  '),AT(15)
-    #DISPLAY ('either version 3 of the License,or (at your option) any later version.'),AT(15)
     #DISPLAY (''),AT(15)
     #DISPLAY ('This template is distributed in the hope that they will be useful     '),AT(15)
     #DISPLAY ('but WITHOUT ANY WARRANTY; without even the implied warranty           '),AT(15)
     #DISPLAY ('of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.'),AT(15)
     #DISPLAY (''),AT(15)
-    #DISPLAY ('See the GNU General Public License for more details.'),AT(15)
+    #DISPLAY ('See the MIT License for more details.'),AT(15)
     #DISPLAY ('http://www.gnu.org/licenses/'),AT(15)
     #DISPLAY ('Copyright 2017 Devuna'),AT(15)
   #ENDBOXED
@@ -104,7 +102,7 @@
 
 #!
 #! Add embed point for Exclude Global Class template
-#!  
+#!
   #IF (%cwversion => 7000)
     #SET(%TemplateSubFolder,'template\win\')
   #ELSE
@@ -127,18 +125,18 @@
     #SET(%TMPRecordsRead,%TMPRecordsRead + 1)
     #IF (LEFT(%Record) = '#SERVICE(''ClaTPLS.DLL'',''GenReadABCFiles'')')
 %Record
-      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
       #READ(%Record)
       #IF (LEFT(%Record) <> '#EMBED(%AfterReadABCFiles)                          #!Devuna modification')
         #SET(%TMPRecord,'#EMBED(%AfterReadABCFiles)                          #!Devuna modification')
-%TMPRecord        
-        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+%TMPRecord
+        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
 %Record
-        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
-      #ENDIF  
-    #ELSE  
+        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
+      #ENDIF
+    #ELSE
 %Record
-        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
     #ENDIF
   #ENDLOOP
   #CLOSE(%ABOOP),READ
@@ -162,8 +160,8 @@
   #ELSE
     #SET(%ClassFile,%Root & '\' & %LibsrcSubFolder & 'abquery.clw')
   #ENDIF
-  
-  #SET(%TakeAcceptedMethod,%FALSE)  
+
+  #SET(%TakeAcceptedMethod,%FALSE)
   #SET(%TMPRecordsRead,0)
   #SET(%TMPRecordsWritten,0)
   #OPEN(%workfile)
@@ -182,41 +180,41 @@
       #SET(%TMPRecordsRead,%TMPRecordsRead + 1)
       #IF (LEFT(%Record) <> 'END')
         #SET(%TMPRecord,'     IF ~SELF.QC.INIMgr &= NULL                 !Devuna modification')
-%TMPRecord            
-        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+%TMPRecord
+        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
         #SET(%TMPRecord,'        SELF.QC.INIMgr.UpdateSectors()          !Devuna modification')
-%TMPRecord            
-        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+%TMPRecord
+        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
         #SET(%TMPRecord,'        SELF.QC.GetQueries(SELF.Queries)        !Devuna modification')
-%TMPRecord            
-        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+%TMPRecord
+        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
         #SET(%TMPRecord,'     END                                        !Devuna modification')
-%TMPRecord            
-        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1) 
-%Record        
-        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1) 
-      #ELSE  
+%TMPRecord
+        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
 %Record
-      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
+      #ELSE
+%Record
+      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
       #ENDIF
-    #ELSIF (LEFT(%Record) = 'SELF.QC.Save(''tsMRU'') ! Save as Most Recently used.')  
+    #ELSIF (LEFT(%Record) = 'SELF.QC.Save(''tsMRU'') ! Save as Most Recently used.')
 %Record
-      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
       #SET(%TMPRecord,'     IF ~SELF.QC.INIMgr &= NULL                 !Devuna modification')
-%TMPRecord            
-      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+%TMPRecord
+      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
       #SET(%TMPRecord,'        SELF.QC.INIMgr.UpdateSectors()          !Devuna modification')
-%TMPRecord            
-      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+%TMPRecord
+      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
       #SET(%TMPRecord,'     END                                        !Devuna modification')
-%TMPRecord            
-      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+%TMPRecord
+      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
     #ELSE
 %Record
-      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
     #ENDIF
   #ENDLOOP
-  
+
   #CLOSE(%ClassFile),READ
   #CLOSE(%Workfile)
   #IF(%TMPRecordsRead > 0 AND %TMPRecordsWritten > %TMPRecordsRead)
@@ -224,7 +222,7 @@
     #REPLACE(%ClassFile,%Workfile)
   #ENDIF
   #REMOVE(%Workfile)
-  
+
 #!
 #! Fix Up abutil.clw
 #!
@@ -238,7 +236,7 @@
   #ELSE
     #SET(%ClassFile,%Root & '\' & %LibsrcSubFolder & 'abutil.clw')
   #ENDIF
-  
+
   #SET(%TMPRecordsRead,0)
   #SET(%TMPRecordsWritten,0)
   #SET(%UpdateSectors,%FALSE)
@@ -252,57 +250,57 @@
     #SET(%TMPRecordsRead,%TMPRecordsRead + 1)
     #IF (LEFT(%Record) = 'INIClass.UpdateSectors PROCEDURE')
        #SET(%UpdateSectors,%TRUE)
-    #ENDIF   
+    #ENDIF
     #IF (LEFT(%Record) = 'INIClass.Fetch PROCEDURE(STRING Sector, STRING Name, STRING Default, STRING Filename)')
       #IF (%UpdateSectors = %FALSE)
         #SET(%TMPRecord,'!======================================================================================')
-%TMPRecord            
-        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+%TMPRecord
+        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
         #SET(%TMPRecord,'! INIClass.UpdateSectors Method Devuna modification')
-%TMPRecord            
-        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+%TMPRecord
+        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
         #SET(%TMPRecord,'!======================================================================================')
-%TMPRecord            
-        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+%TMPRecord
+        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
         #SET(%TMPRecord,'INIClass.UpdateSectors PROCEDURE')
-%TMPRecord            
-        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+%TMPRecord
+        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
         #SET(%TMPRecord,'')
-%TMPRecord            
-        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+%TMPRecord
+        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
         #SET(%TMPRecord,'critProc  CriticalProcedure')
-%TMPRecord            
-        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+%TMPRecord
+        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
         #SET(%TMPRecord,'')
-%TMPRecord            
-        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+%TMPRecord
+        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
         #SET(%TMPRecord,'   CODE')
-%TMPRecord            
-        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+%TMPRecord
+        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
         #SET(%TMPRecord,'   critProc.init(SELF.critSect)')
-%TMPRecord            
-        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+%TMPRecord
+        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
         #SET(%TMPRecord,'   SELF.UpdateQueue(''__Dont_Touch_Me__'',''Sectors'',SELF.Sectors,SELF.Sectors.Family,SELF.Sectors.Item,SELF.Sectors.Type) !***')
-%TMPRecord            
-        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+%TMPRecord
+        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
         #SET(%TMPRecord,'   RETURN')
-%TMPRecord            
-        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+%TMPRecord
+        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
         #SET(%TMPRecord,'')
-%TMPRecord            
-        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+%TMPRecord
+        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
 %Record
-        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
       #ELSE
 %Record
-        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
       #ENDIF
-    #ELSE  
+    #ELSE
 %Record
-      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
     #ENDIF
   #ENDLOOP
-  
+
   #CLOSE(%ClassFile),READ
   #CLOSE(%Workfile)
   #IF(%TMPRecordsRead > 0 AND %TMPRecordsWritten > %TMPRecordsRead)
@@ -324,7 +322,7 @@
   #ELSE
     #SET(%ClassFile,%Root & '\' & %LibsrcSubFolder & 'abutil.inc')
   #ENDIF
-  
+
   #SET(%TMPRecordsRead,0)
   #SET(%TMPRecordsWritten,0)
   #SET(%UpdateSectors,%FALSE)
@@ -338,34 +336,34 @@
     #SET(%TMPRecordsRead,%TMPRecordsRead + 1)
     #IF (LEFT(%Record) = 'Sectors             &SectorQueue,PRIVATE')
       #SET(%TMPRecord,'Sectors             &SectorQueue,PROTECTED   !,PRIVATE Devuna Modification')
-%TMPRecord            
-      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+%TMPRecord
+      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
     #ELSIF (LEFT(%Record) = 'FetchQueue          PROCEDURE(STRING Sector,STRING Name,QUEUE Q,*? F1,<*? F2>,<*? F3>,<*? F4>)')
       #SET(%TMPRecord,'FetchQueue          PROCEDURE(STRING Sector,STRING Name,QUEUE Q,*? F1,<*? F2>,<*? F3>,<*? F4>),VIRTUAL   !Devuna Modification')
-%TMPRecord            
-      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+%TMPRecord
+      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
     #ELSIF (LEFT(%Record) = 'UpdateQueue         PROCEDURE(STRING Sector,STRING Name,QUEUE Q,*? F1,<*? F2>,<*? F3>,<*? F4>)')
       #SET(%TMPRecord,'UpdateQueue         PROCEDURE(STRING Sector,STRING Name,QUEUE Q,*? F1,<*? F2>,<*? F3>,<*? F4>),VIRTUAL   !Devuna Modification')
-%TMPRecord            
-      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+%TMPRecord
+      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
     #ELSIF (LEFT(%Record) = 'GetSectors          PROCEDURE(<STRING Family>, <STRING Item>, <STRING Type>, SectorQueue SQ)')
-%Record            
-      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
-      #READ(%Record) 
+%Record
+      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
+      #READ(%Record)
       #SET(%TMPRecordsRead,%TMPRecordsRead + 1)
       #IF (LEFT(%Record) <> 'UpdateSectors       PROCEDURE')
         #SET(%TMPRecord,'UpdateSectors       PROCEDURE   !Devuna Modification')
-%TMPRecord            
-        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)      
+%TMPRecord
+        #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
       #ENDIF
-%Record            
-      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1) 
-    #ELSE      
-%Record            
-      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1) 
-    #ENDIF  
+%Record
+      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
+    #ELSE
+%Record
+      #SET(%TMPRecordsWritten,%TMPRecordsWritten + 1)
+    #ENDIF
   #ENDLOOP
-  
+
   #CLOSE(%ClassFile),READ
   #CLOSE(%Workfile)
   #IF(%TMPRecordsRead > 0 AND %TMPRecordsWritten > %TMPRecordsRead)
@@ -373,7 +371,7 @@
     #REPLACE(%ClassFile,%Workfile)
   #ENDIF
   #REMOVE(%Workfile)
-  
+
 #!-----------------------------------------------------------------------------------------------------------
 #GROUP(%EmbedStart)
 #?!-----------------------------------------------------------------------------------------------------------

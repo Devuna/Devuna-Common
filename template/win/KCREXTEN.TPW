@@ -3,22 +3,21 @@
 #! ================================================================================================
 #! Author:  Randy Rogers (KCR) <rrogers@devuna.com>
 #! Notice:  Copyright (C) 2017, Devuna
-#!          Distributed under LGPLv3 (http://www.gnu.org/licenses/lgpl.html) 
+#!          Distributed under the MIT License (https://opensource.org/licenses/MIT)
 #! ================================================================================================
-#!    This file is part of Devuna-Common (https://github.com/Devuna/Devuna-Common) 
-#! 
-#!    Devuna-Common is free software: you can redistribute it and/or modify 
-#!    it under the terms of the GNU General Public License as published by 
-#!    the Free Software Foundation, either version 3 of the License, or 
-#!    (at your option) any later version. 
-#! 
-#!    Devuna-Common is distributed in the hope that it will be useful, 
-#!    but WITHOUT ANY WARRANTY; without even the implied warranty of 
-#!    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the 
-#!    GNU General Public License for more details. 
-#! 
-#!    You should have received a copy of the GNU General Public License 
-#!    along with Devuna-Common.  If not, see <http://www.gnu.org/licenses/>. 
+#!    This file is part of Devuna-Common (https://github.com/Devuna/Devuna-Common)
+#!
+#!    Devuna-Common is free software: you can redistribute it and/or modify
+#!    it under the terms of the MIT License as published by
+#!    the Open Source Initiative.
+#!
+#!    Devuna-Common is distributed in the hope that it will be useful,
+#!    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#!    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#!    MIT License for more details.
+#!
+#!    You should have received a copy of the MIT License
+#!    along with Devuna-Common.  If not, see <https://opensource.org/licenses/MIT>.
 #! ================================================================================================
 #!
 #! ----------------------------------------------------------------
@@ -714,7 +713,7 @@
   #IF(%ASCIIFileRecord = %EOF)
     #BREAK
   #ELSE
-    #IF(%SkipTopspeed)               
+    #IF(%SkipTopspeed)
       #IF(UPPER(%ASCIIFileRecord) = ';END OF SOFTVELOCITY ABC LIBRARY EXPORTS')
          #SET(%SkipTopspeed,%FALSE)
          #CYCLE
@@ -811,7 +810,7 @@
   #IF(%IncludeEquates)
    INCLUDE('Devuna.CLW','equates'),ONCE
   #ENDIF
-   INCLUDE('KCRAPI.INC'),ONCE    
+   INCLUDE('KCRAPI.INC'),ONCE
 #ENDAT
 #!
 #!
@@ -1072,7 +1071,7 @@ bMoveWindow   byte(false)
 clientRect    like(RECT)
   #OF('Fill Entire Screen')
 winXPos       LONG(0)
-winYPos       LONG(0)  
+winYPos       LONG(0)
 winWidth      LONG,AUTO
 winHeight     LONG,AUTO
   #ENDCASE
@@ -2499,8 +2498,8 @@ hRgnUpdate           HRGN
 #AT(%WindowManagerMethodCodeSection,'Init','(),BYTE'),DESCRIPTION('Set Window Style'),PRIORITY(8010)
   #IF(%ThisIcon)
 !----------------------------------------------------------------------
-! Change Window Style  
-!----------------------------------------------------------------------  
+! Change Window Style
+!----------------------------------------------------------------------
     #IF(%RemoveIcon)
 kcr_SetClassLong(%Window{prop:handle},GCL_HICONx,0)
 kcr_SetClassLong(%Window{prop:handle},GCL_HICONSM,0)
@@ -2527,7 +2526,7 @@ kcr_GetWindowRect(%Window{prop:handle},rc)
 kcr_InvalidateRect(%Window{prop:handle},rc,TRUE)
 hRgnUpdate = kcr_CreateRectRgn(0,0,1,1)
 kcr_SendMessage(%Window{prop:handle},WM_NCPAINT,kcr_GetUpdateRgn(%Window{prop:handle},hRgnUpdate,FALSE),0)
-!----------------------------------------------------------------------  
+!----------------------------------------------------------------------
   #ENDIF
 #ENDAT
 #!
@@ -2583,9 +2582,9 @@ hRgnUpdate           HRGN
 #!
 #AT(%WindowManagerMethodCodeSection,'Init','(),BYTE'),DESCRIPTION('Set Window Style'),PRIORITY(8010)
   #IF(%ThisIcon)
-!----------------------------------------------------------------------  
+!----------------------------------------------------------------------
 ! Set Window Style
-!----------------------------------------------------------------------  
+!----------------------------------------------------------------------
     #IF(%RemoveIcon)
 kcr_SetClassLong(%Window{prop:handle},GCL_HICONx,0)
 kcr_SetClassLong(%Window{prop:handle},GCL_HICONSM,0)
@@ -2612,7 +2611,7 @@ kcr_GetWindowRect(%Window{prop:handle},rc)
 kcr_InvalidateRect(%Window{prop:handle},rc,TRUE)
 hRgnUpdate = kcr_CreateRectRgn(0,0,1,1)
 kcr_SendMessage(%Window{prop:handle},WM_NCPAINT,kcr_GetUpdateRgn(%Window{prop:handle},hRgnUpdate,FALSE),0)
-!----------------------------------------------------------------------  
+!----------------------------------------------------------------------
   #ENDIF
 #ENDAT
 #!
@@ -4937,7 +4936,7 @@ IF hwndTT
   #IF (%ApplyAsRegularTip)
   !This code is placed to instantly enable tooltips on all controls
   Fld = 0
-  LOOP                                                  
+  LOOP
      Fld = %window{PROP:NextField,Fld}
      IF Fld = 0
         BREAK
@@ -5503,7 +5502,7 @@ Window WINDOW('Application Colours'),AT(,,304,158),CENTER,GRAY,FONT('Segoe UI Se
       BOX,AT(231,86,48,10),USE(?glo:StringColor:Box),COLOR(COLOR:Black),LINEWIDTH(1)
    END
   !***ENDOMIT***
-  
+
 PreviewWindow WINDOW('Application Window'),AT(,,410,167),CENTER,GRAY,SYSTEM, |
          FONT('Segoe UI Semilight',11),DOUBLE
       PANEL,AT(4,4,200,144),USE(?SampleBrowseWindow)
@@ -5557,7 +5556,7 @@ PreviewWindow WINDOW('Application Window'),AT(,,410,167),CENTER,GRAY,SYSTEM, |
    Typeface = CHOOSE(glo:Typeface='','Segoe UI Semilight',glo:Typeface)
    DO SetTypeFace
    !***ENDCOMPILE***
-   
+
    ?glo:WindowColor:Box{PROP:Fill} = glo:WindowColor
    ?glo:BrowseColor:Box{PROP:Fill} = glo:BrowseColor
    ?glo:FormColor:Box{PROP:Fill} = glo:FormColor
@@ -5879,7 +5878,7 @@ PreviewWindow WINDOW('Application Window'),AT(,,410,167),CENTER,GRAY,SYSTEM, |
              AND glo:BackSelectedColor = 0  |
              AND glo:TextColor = 0          |
              AND glo:TextSelectedColor = 0  |
-             AND glo:BackColor = 0          
+             AND glo:BackColor = 0
                  glo:WindowColor = DEFAULTWINDOWCOLOR
                  glo:BrowseColor = DEFAULTBROWSECOLOR
                  glo:FormColor = DEFAULTFORMCOLOR
@@ -5891,7 +5890,7 @@ PreviewWindow WINDOW('Application Window'),AT(,,410,167),CENTER,GRAY,SYSTEM, |
                  glo:BackSelectedColor = DEFAULTBACKSELECTEDCOLOR
                  glo:TextColor = DEFAULTTEXTCOLOR
                  glo:TextSelectedColor = DEFAULTTEXTSELECTEDCOLOR
-             END    
+             END
           OF 'Wheat'
              glo:WindowColor = color:teal
              glo:BrowseColor = 048B0C8h
@@ -5944,7 +5943,7 @@ PreviewWindow WINDOW('Application Window'),AT(,,410,167),CENTER,GRAY,SYSTEM, |
             CASE EVENT()
               OF EVENT:OpenWindow
                  PreviewWindow{PROP:Background} = CHOOSE(glo:WindowColor <> glo:BrowseColor,glo:WindowColor,glo:PanelColor)
-                 
+
    COMPILE('***ENDCOMPILE***',_EnableTypefaceCode_)
                  IF glo:Typeface <> ''
                     PreviewWindow{PROP:FontName} = glo:Typeface
@@ -6045,18 +6044,18 @@ PreviewWindow WINDOW('Application Window'),AT(,,410,167),CENTER,GRAY,SYSTEM, |
           END
           CLOSE(PreviewWindow)
         END
-        
+
    OMIT('***ENDOMIT***',_EnableTypefaceCode_)
         IF INRANGE(ACCEPTED(),?glo:WindowColor:Button,?glo:Theme)
            DO SetupColorDialogCustomColors
         END
-   !***ENDOMIT***     
+   !***ENDOMIT***
    COMPILE('***ENDCOMPILE***',_EnableTypefaceCode_)
         IF INRANGE(ACCEPTED(),?glo:WindowColor:Button,?LookupFont)
            DO SetupColorDialogCustomColors
         END
-   !***ENDCOMPILE***     
-        
+   !***ENDCOMPILE***
+
      END
    END
    CLOSE(WINDOW)
@@ -6286,7 +6285,7 @@ OMIT('end_omit')
   #PROMPT('Generate ShowSystemInformation Routine',CHECK),%GenerateShowSystemInformation,DEFAULT(1),AT(10)
   #PROMPT('Default Window Icon',@S255),%DefaultWindowIcon
   #ENDENABLE
-  #DISPLAY ('')  
+  #DISPLAY ('')
 #ENDBOXED
 #ATSTART
   #DECLARE(%ThisPointer)
@@ -6319,7 +6318,7 @@ ShowSystemInformation   ROUTINE
    DATA
 _rc                  LIKE(RECT)
 _hRgnUpdate          HRGN
-   
+
 _szMessageText       CSTRING(2048)
 _szMailBody          CSTRING(2048)
 _szURL               CSTRING(4096)
@@ -6371,14 +6370,14 @@ _winSystemInformation WINDOW('Devuna Complete System Information'), |
       BUTTON('&Help'),AT(272,150,48,14),USE(?_cmdHelp),ICON('help2.ico'),TIP('Copy h' & |
             'elp context string to clipboard'),LEFT
    END
-    
+
    CODE
-  	   _szServerName = INIMgr.TryFetch('DataPathSection','IP_ServerName')
-  	   _szServerPort = INIMgr.TryFetch('DataPathSection','IP_ServerPort')
+           _szServerName = INIMgr.TryFetch('DataPathSection','IP_ServerName')
+           _szServerPort = INIMgr.TryFetch('DataPathSection','IP_ServerPort')
 
       _szProjectTarget = UPPER('%ProjectTarget')
       _szModule        = UPPER('%Module')
-  #IF(%Window)         
+  #IF(%Window)
       _szContextString = %Window{PROP:Hlp}
       _szPosition    =  '(' & %Window{PROP:XPos} & ',' & %Window{PROP:YPos} & ',' & %Window{PROP:Width} & ',' & %Window{PROP:Height} & ')'
   #ELSE
@@ -6386,14 +6385,14 @@ _winSystemInformation WINDOW('Devuna Complete System Information'), |
       _szPosition      = ''
   #ENDIF
       OMIT('ENDOMIT',IPDRV)
-  	   _szDataPath = LONGPATH(glo:DataPath)
-  	   !ENDOMIT
-  	   COMPILE('ENDCOMPILE',IPDRV)
+           _szDataPath = LONGPATH(glo:DataPath)
+           !ENDOMIT
+           COMPILE('ENDCOMPILE',IPDRV)
       _szDataPath    =  CLIP(IPx.Exec('GetServerPath',glo:DataPath)) & '\' & INIMgr.TryFetch('DataPathSection','DataPath')
       _szDataPath[LEN(_szDataPath)] = '<0>'   !strip off trailing backslash
       !ENDCOMPILE
       _szProgramPath =  LONGPATH(glo:ProgramPath)
-      
+
       _szMessageText =  'Program:<9> '                    & _szProjectTarget   & |
                         '<13,10>Module:<9,9> '            & _szModule          & |
                         '<13,10>Procedure:<9> %Procedure'                      & |
@@ -6406,7 +6405,7 @@ _winSystemInformation WINDOW('Devuna Complete System Information'), |
                         '<13,10>Program Path:<9> '        & _szProgramPath     & |
                         '<13,10><13,10>User Name:<9> '    & glo:UserName       & |
                         '<13,10>System Date:<9> '         & FORMAT(glo:SystemDate,@D017b)
-                        
+
       _szMailBody =     'Program: '                   & _szProjectTarget   & |
                         '<37>0aModule: '              & _szModule          & |
                         '<37>0aProcedure: %Procedure'                      & |
@@ -6418,16 +6417,16 @@ _winSystemInformation WINDOW('Devuna Complete System Information'), |
                         '<37>0aProgram Path: '        & _szProgramPath     & |
                         '<37>0a<37>0aUser Name: '     & glo:UserName       & |
                         '<37>0aSystem Date: '         & FORMAT(glo:SystemDate,@D017b)
-                        
-      _szURL =          'MailTo:support@devuna.com?Subject=' & _szSubject & '&Body=' & _szMailBody                       
-      
+
+      _szURL =          'MailTo:support@devuna.com?Subject=' & _szSubject & '&Body=' & _szMailBody
+
       OPEN(_winSystemInformation)
       kcr_SetWindowLong(_winSystemInformation{prop:handle},GWL_STYLE,BXOR(kcr_GetWindowLong(_winSystemInformation{prop:handle},GWL_STYLE),WS_MINIMIZEBOX))
       kcr_SetWindowLong(_winSystemInformation{prop:handle},GWL_STYLE,BOR(kcr_GetWindowLong(_winSystemInformation{prop:handle},GWL_STYLE),WS_SYSMENU))
       kcr_GetWindowRect(_winSystemInformation{prop:handle},_rc)
       kcr_InvalidateRect(_winSystemInformation{prop:handle},_rc,TRUE)
       _hRgnUpdate = kcr_CreateRectRgn(0,0,1,1)
-      kcr_SendMessage(_winSystemInformation{prop:handle},WM_NCPAINT,kcr_GetUpdateRgn(_winSystemInformation{prop:handle},_hRgnUpdate,FALSE),0)      
+      kcr_SendMessage(_winSystemInformation{prop:handle},WM_NCPAINT,kcr_GetUpdateRgn(_winSystemInformation{prop:handle},_hRgnUpdate,FALSE),0)
       ACCEPT
          CASE EVENT()
            OF EVENT:CloseDown
@@ -6442,23 +6441,23 @@ _winSystemInformation WINDOW('Devuna Complete System Information'), |
                    SETCLIPBOARD(_szMessageText)
                    POST(EVENT:CloseWindow)
                 OF ?_cmdSend
-  #IF(%Window)         
+  #IF(%Window)
                    kcr_ShellExecute(%Window{prop:handle},0,_szURL,0,_szNull,1)
   #ELSE
                    kcr_ShellExecute(0{prop:handle},0,_szURL,0,_szNull,1)
   #ENDIF
                    POST(EVENT:CloseWindow)
                 OF ?_cmdHelp
-  #IF(%Window)         
+  #IF(%Window)
                    SETCLIPBOARD(%Window{PROP:Hlp})
-  #ENDIF                   
+  #ENDIF
                    POST(EVENT:CloseWindow)
               END
-         END     
+         END
       END
       CLOSE(_winSystemInformation)
       EXIT
-#ENDAT      
+#ENDAT
 #!
 #!
 #AT(%ProcedureRoutines),DESCRIPTION('Application Colors Code'),WHERE(%Window AND ~%DisableApplicationColors)
@@ -6656,7 +6655,7 @@ SetApplicationColors    ROUTINE
       #IF(NOT %ThisColor)
    IF %ThisControl{prop:width} > 4 AND %ThisControl{prop:height} > 4
       %ThisControl{PROP:Fill} = glo:PanelColor
-   END   
+   END
       #ENDIF
     #!
     #!
@@ -6695,7 +6694,7 @@ SetApplicationColors    ROUTINE
 
    IF glo:Theme = 'None'
       ! Do Nothing
-   ELSE  
+   ELSE
       IF glo:TransparentButtons
   #FOR(%Control),WHERE(%ControlType = 'BUTTON')
     #SET(%ThisPointer,INSTRING('.',%Control))
@@ -6719,9 +6718,9 @@ SetApplicationColors    ROUTINE
        #SET(%ThisControl,%Control)
     #ENDIF
          %ThisControl{PROP:TRN} = FALSE
-  #ENDFOR       
+  #ENDFOR
       END
-   END  
+   END
   #!
   #EMBED(%AfterSetApplicationColors,'After Setting Application Color Scheme')
   EXIT
@@ -6771,7 +6770,7 @@ hRgnUpdate           HRGN
       #IF(UPPER(%ProcedureTemplate) <> 'FRAME')
 %Window{PROP:Icon} = '~Metro.ico'
       #ENDIF
-    #ENDIF  
+    #ENDIF
   #ENDIF
   #IF(UPPER(%ProcedureTemplate) <> 'FRAME')
 kcr_SetWindowLong(%Window{prop:handle},GWL_STYLE,BXOR(kcr_GetWindowLong(%Window{prop:handle},GWL_STYLE),WS_MINIMIZEBOX))
@@ -7470,7 +7469,7 @@ _Ctrl   LONG,AUTO
 %Field = glo:UserID                    #<! Assign initial field value
         #OF('DATEMODIFIED')
 %Field = TODAY()                       #<! Assign initial field value
-        #OF('TIMEMODIFIED')            
+        #OF('TIMEMODIFIED')
 %Field = CLOCK()                       #<! Assign initial field value
         #OF('USERMODIFIED')
 %Field = glo:UserID                    #<! Assign initial field value
@@ -7496,7 +7495,7 @@ _Ctrl   LONG,AUTO
 %Field = glo:UserID                    #<! Assign initial field value
         #OF('DATEMODIFIED')
 %Field = TODAY()                       #<! Assign initial field value
-        #OF('TIMEMODIFIED')            
+        #OF('TIMEMODIFIED')
 %Field = CLOCK()                       #<! Assign initial field value
         #OF('USERMODIFIED')
 %Field = glo:UserID                    #<! Assign initial field value
@@ -7733,14 +7732,14 @@ END
 #!-----------------------------------------------------------------
 #AT(%WindowManagerMethodCodeSection,'Run','(),BYTE'),PRIORITY(2500),DESCRIPTION('Post Procedure Open Event to Main Thread')
    #SET(%ValueConstruct,'POST(EVENT:' & %Procedure & 'Open,,glo:MainThread)')
-%ValueConstruct   
-#ENDAT   
+%ValueConstruct
+#ENDAT
 #!
 #!
 #AT(%WindowManagerMethodCodeSection,'Run','(),BYTE'),PRIORITY(7500),DESCRIPTION('Post Procedure Close Event to Main Thread')
    #SET(%ValueConstruct,'POST(EVENT:' & %Procedure & 'Close,,glo:MainThread)')
-%ValueConstruct   
-#ENDAT   
+%ValueConstruct
+#ENDAT
 #!
 #!
 #!

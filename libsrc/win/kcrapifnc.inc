@@ -1,21 +1,20 @@
-! ================================================================================ 
+! ================================================================================
 ! Notice : Copyright (C) 2017, Devuna
-!          Distributed under LGPLv3 (http://www.gnu.org/licenses/lgpl.html) 
-! 
-!    This file is part of Devuna-Common (https://github.com/Devuna/Devuna-Common) 
-! 
-!    Devuna-Common is free software: you can redistribute it and/or modify 
-!    it under the terms of the GNU General Public License as published by 
-!    the Free Software Foundation, either version 3 of the License, or 
-!    (at your option) any later version. 
-! 
-!    Devuna-Common is distributed in the hope that it will be useful, 
-!    but WITHOUT ANY WARRANTY; without even the implied warranty of 
-!    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the 
-!    GNU General Public License for more details. 
-! 
-!    You should have received a copy of the GNU General Public License 
-!    along with Devuna-Common.  If not, see <http://www.gnu.org/licenses/>. 
+!          Distributed under the MIT License (https://opensource.org/licenses/MIT)
+!
+!    This file is part of Devuna-Common (https://github.com/Devuna/Devuna-Common)
+!
+!    Devuna-Common is free software: you can redistribute it and/or modify
+!    it under the terms of the MIT License as published by
+!    the Open Source Initiative.
+!
+!    Devuna-Common is distributed in the hope that it will be useful,
+!    but WITHOUT ANY WARRANTY; without even the implied warranty of
+!    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+!    MIT License for more details.
+!
+!    You should have received a copy of the MIT License
+!    along with Devuna-Common.  If not, see <https://opensource.org/licenses/MIT>.
 ! ================================================================================
 
 !Include Inside Global Map
@@ -83,11 +82,11 @@
     kcr_GetProcAddress(UNSIGNED hModule,*CSTRING szProcName),LONG,PASCAL,RAW,NAME('GetProcAddress')
     kcr_GetProp(HWND hwnd, *CSTRING szPropertyName),HANDLE,RAW,PASCAL,NAME('GetPropA')
     kcr_GetProp(HWND hwnd, STRING szPropertyName),HANDLE,RAW,PASCAL,NAME('GetPropA')
-    kcr_GetStdHandle(DWORD nStdHandle),HANDLE,RAW,PASCAL,NAME('GetStdHandle')    
+    kcr_GetStdHandle(DWORD nStdHandle),HANDLE,RAW,PASCAL,NAME('GetStdHandle')
     kcr_GetSysColor(LONG nIndex),LONG,PASCAL,NAME('GetSysColor')
     kcr_GetSystemMetrics(SIGNED),SIGNED,PASCAL,NAME('GetSystemMetrics')
     kcr_GetTempFileName(*CSTRING szPathName, *CSTRING szPrefixString, SHORT uUnique, *CSTRING szTempFileName),SHORT,PASCAL,RAW,PROC,NAME('GetTempFileNameA')
-    kcr_GetTempPath(LONG nBufferLength, *CSTRING szBuffer),LONG,PASCAL,RAW,PROC,NAME('GetTempPathA')    
+    kcr_GetTempPath(LONG nBufferLength, *CSTRING szBuffer),LONG,PASCAL,RAW,PROC,NAME('GetTempPathA')
     kcr_GetUpdateRgn(HWND hWnd, HANDLE hRegion, BOOL bErase),LONG,PASCAL,NAME('GetUpdateRgn')
     kcr_GetVersionEx(*OSVERSIONINFO osvi),BOOL,PASCAL,RAW,NAME('GetVersionExA'),PROC
     kcr_GetWindowDC(UNSIGNED hwnd),UNSIGNED,PASCAL,NAME('GetWindowDC')
@@ -130,7 +129,7 @@
     kcr_RegEnumKeyEx(UNSIGNED hKey,ULONG dwIndex,*CSTRING lpName,*ULONG lpcName,ULONG lpReserved,ULONG lpClass,ULONG lpcClass,ULONG lpftLastWriteTime),LONG,RAW,PASCAL,NAME('RegEnumKeyExA'),PROC
     kcr_RegEnumValue(UNSIGNED hKey,ULONG dwIndex,*CSTRING valueName,*ULONG cchValueName, ULONG lpReserved, ULONG lpType, ULONG lpData, ULONG lpcbData),LONG,RAW,PASCAL,NAME('RegEnumValueA'),PROC
     kcr_RegOpenKeyEx(UNSIGNED hKey,*CSTRING szSubKey,ULONG ulOptions,ULONG samDesired,*ULONG hkResult),LONG,RAW,PASCAL,NAME('RegOpenKeyExA'),PROC
-    kcr_RegQueryValueEx(UNSIGNED hKey,*CSTRING szValueName,ULONG reserved,*ULONG lType,ULONG lpData,*ULONG cbData),LONG,RAW,PASCAL,NAME('RegQueryValueExA'),PROC    
+    kcr_RegQueryValueEx(UNSIGNED hKey,*CSTRING szValueName,ULONG reserved,*ULONG lType,ULONG lpData,*ULONG cbData),LONG,RAW,PASCAL,NAME('RegQueryValueExA'),PROC
     kcr_RegSetValueEx(UNSIGNED hKey,*CSTRING szValueName,ULONG reserved,ULONG dwType,LONG lpData,ULONG cbData),LONG,RAW,PASCAL,NAME('RegSetValueExA'),PROC
     kcr_ReleaseCapture(),PASCAL,NAME('ReleaseCapture')
     kcr_ReleaseDC(HWND hWnd, HDC hDC),UNSIGNED,PASCAL,PROC,NAME('ReleaseDC')
@@ -167,7 +166,7 @@
     kcr_UpdateWindow(HWND hWnd),BOOL,PASCAL,PROC,NAME('UpdateWindow')
     kcr_WaitForSingleObject(HANDLE hHandle, DWORD dwMilliseconds),LONG,PROC,PASCAL,RAW,NAME('WaitForSingleObject')
     kcr_WindowFromPoint(POINT pt),HWND,RAW,PASCAL,NAME('WindowFromPoint')
-    kcr_WriteFile(HANDLE hFile, LPVOID lpBuffer, DWORD nNumberOfBytesToWrite, LPDWORD lpNumberOfBytesWritten, LPOVERLAPPED lpOverlapped),BOOL,PASCAL,RAW,NAME('WriteFile')    
+    kcr_WriteFile(HANDLE hFile, LPVOID lpBuffer, DWORD nNumberOfBytesToWrite, LPDWORD lpNumberOfBytesWritten, LPOVERLAPPED lpOverlapped),BOOL,PASCAL,RAW,NAME('WriteFile')
     kcr_ZeroMemory(LONG DestinationPtr,LONG dwLength),RAW,PASCAL,NAME('RtlZeroMemory')
  END
  MODULE('clib')

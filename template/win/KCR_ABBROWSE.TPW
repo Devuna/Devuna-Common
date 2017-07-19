@@ -3,22 +3,21 @@
 #! ================================================================================================
 #! Author:  Randy Rogers (KCR) <rrogers@devuna.com>
 #! Notice:  Copyright (C) 2017, Devuna
-#!          Distributed under LGPLv3 (http://www.gnu.org/licenses/lgpl.html) 
+#!          Distributed under the MIT License (https://opensource.org/licenses/MIT)
 #! ================================================================================================
-#!    This file is part of Devuna-Common (https://github.com/Devuna/Devuna-Common) 
-#! 
-#!    Devuna-Common is free software: you can redistribute it and/or modify 
-#!    it under the terms of the GNU General Public License as published by 
-#!    the Free Software Foundation, either version 3 of the License, or 
-#!    (at your option) any later version. 
-#! 
-#!    Devuna-Common is distributed in the hope that it will be useful, 
-#!    but WITHOUT ANY WARRANTY; without even the implied warranty of 
-#!    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the 
-#!    GNU General Public License for more details. 
-#! 
-#!    You should have received a copy of the GNU General Public License 
-#!    along with Devuna-Common.  If not, see <http://www.gnu.org/licenses/>. 
+#!    This file is part of Devuna-Common (https://github.com/Devuna/Devuna-Common)
+#!
+#!    Devuna-Common is free software: you can redistribute it and/or modify
+#!    it under the terms of the MIT License as published by
+#!    the Open Source Initiative.
+#!
+#!    Devuna-Common is distributed in the hope that it will be useful,
+#!    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#!    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#!    MIT License for more details.
+#!
+#!    You should have received a copy of the MIT License
+#!    along with Devuna-Common.  If not, see <https://opensource.org/licenses/MIT>.
 #! ================================================================================================
 #!
 #PROCEDURE(Browse,'Browse Fields in a List Box'),WINDOW,REPORT,HLP('~TPLProcBrowse'),PARENT(Window(ABC))
@@ -685,7 +684,7 @@ Window WINDOW('Browse Records'),AT(,,360,238),FONT('Segoe UI Semilight',11,,FONT
       #PROMPT('Always Calculate Totals',CHECK),%BrowseAllTotalOnOff,DEFAULT(%True),AT(10)
       #ENABLE(NOT %BrowseAllTotalOnOff)
          #BOXED,SECTION
-         #PROMPT('&Condition:',@S255),%BrowseAllTotalOnOffCondition,REQ,AT(,,75)          
+         #PROMPT('&Condition:',@S255),%BrowseAllTotalOnOffCondition,REQ,AT(,,75)
          #BUTTON('E'),WHENACCEPTED(%SVExpresionEditor(%BrowseAllTotalOnOffCondition)),AT(174,2,10,10)
          #ENDBUTTON
          #ENDBOXED
@@ -1585,7 +1584,7 @@ v{PROP:Having} = %ValueConstruct
   SELF.Q.%ValueConstruct_SelectedBG = %AllControlFieldBackgroundSelected
          #ENDIF
        #ENDFOR
-#?END                     
+#?END
 #RESUME
     #ELSE
        #FOR(%QueueField)
@@ -1627,7 +1626,7 @@ SELF.Q.%ValueConstruct_SelectedBG = %AllControlFieldBackgroundSelected
   SELF.Q.%ValueConstruct_Style = %(%GetStyleNumber(%AllControlFieldStyleType,%AllControlFieldStyle,%AllControlFieldStyleLocalList)) ! %AllControlFieldStyle
          #ENDIF
        #ENDFOR
-#?END                     
+#?END
 #RESUME
     #ELSE
        #FOR(%QueueField)
@@ -1977,7 +1976,7 @@ END
     #?OF '%'(UPPER(%ControlField))'
 #IF(%ControlFieldSortHeaderDisableColumn OR ITEMS(%ControlFieldSortHeaderFields)=0)
        RETURN False
-#ELSE       
+#ELSE
        RETURN True
 #ENDIF
 #ENDFOR
@@ -2771,7 +2770,7 @@ IF NOT RECORDS(SELF.ListQueue)
 %NoRecordsControl{Prop:Hide} = 1
     #ENDIF
 END
-IF RECORDS(SELF.ListQueue) 
+IF RECORDS(SELF.ListQueue)
     #IF (%NoRecordsAction='Disable')
 %NoRecordsControl{Prop:Disable} = 0
     #ELSE
